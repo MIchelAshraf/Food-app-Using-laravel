@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <?php 
+    
+    ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="pizza, delivery food, fast food, sushi, take away, chinese, italian food">
+    <meta name="description" content="">
+    <meta name="author" content="Ansonika">
+    <meta name="google-signin-client_id" content="450608271940-h4r6u2tk5su5ng0jp953ppc3hn1b29fv.apps.googleusercontent.com">
+    <title>QuickFood - Quality delivery or take away food</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/img/apple-touch-icon-144x144-precomposed.png">
+    
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/api.js" ></script>
+
+    <!-- BASE CSS -->
+    <link href="/css/animate.min.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/responsive.css" rel="stylesheet">
+	<link href="/css/elegant_font/elegant_font.min.css" rel="stylesheet">
+	<link href="/css/fontello/css/fontello.min.css" rel="stylesheet">
+	<link href="/css/magnific-popup.css" rel="stylesheet">
+	<link href="/css/pop_up.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/menu.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/elegant_font/elegant_font.min.css" rel="stylesheet">
+    <link href="/css/fontello/css/fontello.min.css" rel="stylesheet">
+    <link href="/css/magnific-popup.css" rel="stylesheet">
+    <link href="/css/pop_up.css" rel="stylesheet">
+	<!-- YOUR CUSTOM CSS -->
+	<link href="/css/custom.css" rel="stylesheet">
+   
+    <!-- Modernizr -->
+	<script src="js/modernizr.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-spinner sk-spinner-wave" id="status">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+        </div>
+    </div><!-- End Preload -->
+    
+    <!-- Header ================================================== -->
+    <header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col--md-4 col-sm-4 col-xs-4">
+                <a href="/" id="logo">
+                <img src="/img/logo.png" width="190" height="23" alt="" data-retina="true" class="hidden-xs">
+                <img src="/img/logo_mobile.png" width="59" height="23" alt="" data-retina="true" class="hidden-lg hidden-md hidden-sm">
+                </a>
+            </div>
+            <nav class="col--md-8 col-sm-8 col-xs-8">
+            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+            <div class="main-menu">
+                <div id="header_menu">
+                    <img src="/img/logo.png" width="190" height="23" alt="" data-retina="true">
+                </div>
+                <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
+                <ul>
+                    <li class="submenu">
+                    <a class='{{ Request::path()==="/"? "select-menu": ''}}' href="/" class="show-submenu">Home<i class=""></i></a>
+                   
+                    </li>
+                    
+                <li class='{{ Request::path()==="menu"? "select-menu": ''}}'> <a href="/menu">Menu</a></li>
+                    <li  class='{{ Request::path()==="about"? "select-menu": ''}}'><a href="/about">About us</a></li>
+                    <li class='{{ Request::path()==="faq"? "select-menu": ''}}'><a href="/faq">FAQ</a></li>
+                    <li class="submenu">
+@if (Auth::guest())
+                    <li><a href="#0" data-toggle="modal" data-target="#login_2">Login</a></li>
+                    <li><a href="#0" data-toggle="modal" data-target="#register">Register</a></li>
+@else
+<li class='select-menu'><a >{{  ucfirst(Auth::user()->name) }}</a></li>   
+    <a href="{{ route('logout') }}">Logout</a>
+    <a > </a><?php $waw= Auth::user()->type; 
+    
+    if($waw==2){
+
+      ?>  <li class='{{ Request::path()==="admin"? "select-menu": ''}}'><a style='color:red;' href="/admin">Admin</a></li>
+              <?php   
+    }
+    
+    
+    ?>   
+@endif
+
+                
+                    </li>
+                    
+                    
+                </ul>
+            </div><!-- End main-menu -->
+            </nav>
+        </div><!-- End row -->
+    </div><!-- End container -->
+    </header>
+	<!-- End Header =============================================== -->
+    
+    
+    
+    @yield('content')
+    
+    
+
+    <!-- Footer ================================================== -->
+    <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-3">
+                <h3>Secure payments with</h3>
+                <p>
+                    <img src="/img/cards.png" alt="" class="img-responsive">
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/faq">Faq</a></li>
+                   
+                    <li><a href="#0" data-toggle="modal" data-target="#login_2">Login</a></li>
+                    <li><a href="#0" data-toggle="modal" data-target="#register">Register</a></li>
+                    
+                </ul>
+                <?php  ?>
+            </div>
+          
+       
+        </div><!-- End row -->
+        <div class='row col-md-4 col-sm-3'>
+        </div>
+        <div class='row col-md-4 col-sm-3'>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="social_footer">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Albert.N.Louca"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#0"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#0"><i class="icon-google"></i></a></li>
+                        <li><a href="#0"><i class="icon-instagram"></i></a></li>
+                        <li><a href="#0"><i class="icon-pinterest"></i></a></li>
+                        <li><a href="#0"><i class="icon-vimeo"></i></a></li>
+                        <li><a href="#0"><i class="icon-youtube-play"></i></a></li>
+                    </ul>
+                    <p>
+                        © Quick Food 2020
+                    </p>
+                </div>
+            </div>
+        </div><!-- End row -->
+    </div><!-- End container -->
+    </footer>
+    <!-- End Footer =============================================== -->
+
+<div class="layer"></div><!-- Mobile menu overlay mask -->
+
+<!-- Login modal -->   
+<div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+                
+       
+				<form method="POST" action="{{ route('login') }}" class="popup-form">
+                @csrf
+                    <div class="login_icon"><i class="icon_lock_alt"></i></div>
+					<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  placeholder="Email" autofocus>
+                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"  placeholder="Password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                    
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                               
+
+                        
+                                <button type="submit" class="btn btn-submit">
+                                    {{ __('Login') }}
+                                </button>
+
+                                <div  data-onsuccess="onSignIn"></div>
+
+
+<div>
+<a href="{{ url('/redirect') }}" class="btn btn-primary">Login With Google</a>             
+ <a href="{{url('/login/facebook')}}" class="btn btn-primary">Login with Facebook</a>
+                                </div>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                           
+                </form>
+			</div>
+		</div>
+	</div><!-- End modal -->   
+    
+<!-- Register modal -->   
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				
+				<form class="popup-form"method="POST" action="{{ route('register') }}">
+                @csrf
+                	<div class="login_icon"><i class="icon_lock_alt"></i></div>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror                   
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail" >
+                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+
+                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                    <label for="Gender">Choose your Gender:</label>
+                    <select class="form-control form-white" name="Gender" id="Gender">
+                        <option style='color:black' value="M">Male</option>
+                        <option style='color:black' value="F">Female</option>
+                    
+                      </select>
+                    <div id="pass-info" class="clearfix"></div>
+					<div class="checkbox-holder text-left">
+						<div class="checkbox">
+							<input type="checkbox" value="accept_2" id="check_2" name="check_2" required/>
+							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+						</div>
+					</div>
+					<button type="submit" name="register" class="btn btn-submit">Register</button>
+				</form>
+			</div>
+		</div>
+	</div><!-- End Register modal -->
+    
+<!-- COMMON SCRIPTS -->
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/common_scripts_min.js"></script>
+<script src="/js/functions.js"></script>
+<script src="/assets/validate.js"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="/js/video_header.js"></script>
+<script>
+$(document).ready(function() {
+	'use strict';
+   	  HeaderVideo.init({
+      container: $('.header-video'),
+      header: $('.header-video--media'),
+      videoTrigger: $("#video-trigger"),
+      autoPlayVideo: true
+    });    
+
+});
+</script>
+
+</body>
+</html>
